@@ -12,15 +12,24 @@ const manifest: ManifestType = {
     default_popup: "src/pages/popup/index.html",
     default_icon: "icon-34.png",
   },
-  chrome_url_overrides: {
-    newtab: "src/pages/newtab/index.html",
-  },
+  // chrome_url_overrides: {
+  //   newtab: "src/pages/newtab/index.html",
+  // },
   icons: {
-    "128": "icon-128.png",
+    "16": "logo16.png",
+    "32": "logo32.png",
+    "48": "logo48.png",
+    "128": "logo128.png",
   },
+  permissions: ["storage", "tabs", "scripting"],
+  host_permissions: [
+    "https://music.youtube.com/*",
+    "https://ws.audioscrobbler.com/",
+    "https://www.last.fm/api/*",
+  ],
   content_scripts: [
     {
-      matches: ["http://*/*", "https://*/*", "<all_urls>"],
+      matches: ["*://music.youtube.com/*"],
       js: ["src/pages/content/index.js"],
       css: ["assets/css/contentStyle.chunk.css"],
     },
@@ -34,7 +43,7 @@ const manifest: ManifestType = {
         "icon-128.png",
         "icon-34.png",
       ],
-      matches: ["*://*/*"],
+      matches: ["*://music.youtube.com/*"],
     },
   ],
 };

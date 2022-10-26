@@ -1,4 +1,6 @@
 .App {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -6,10 +8,13 @@
   right: 0px;
   text-align: center;
   height: 100%;
-  padding: 10px;
-  background-color: #282c34;
+  padding: 4px 8px 4px 8px;
+  /* background-color: #282c34; */
 }
 
+.App > div {
+  margin-bottom: 1em;
+}
 .App-logo {
   height: 30vmin;
   pointer-events: none;
@@ -42,4 +47,89 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Pop-Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.Pop-Header p {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.Pop-Header .active {
+  color: rgb(44, 157, 24);
+}
+
+.Pop-Header .warn {
+  color: rgb(221, 110, 110);
+}
+
+.flex-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  margin: 1em 0em 1em 0em;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 1px #00000052;
+}
+
+.now-playing {
+  border: 1px solid rgba(173, 216, 230, 0.537);
+}
+
+.settings {
+  border: 1px solid rgba(255, 182, 193, 0.566);
+}
+
+#song-loveBtn
+.settings > :nth-child(n+1) {
+  margin-top: 1em;
+}
+
+.Tab {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Tab-button {
+  padding: 6px 4px 6px 4px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 0px 3px #0000008c;
+  background: #bdbdbd7a;
+  cursor: pointer;
+}
+
+.Tab-button.active {
+  background: #f3e3fd;
+}
+
+#saveBtn {
+  cursor: pointer;
+  padding: 0.3em;
+  background: azure;
+  border: 1px solid #00000038;
+  border-radius: 2px;
+  min-width: 80px;
+}
+
+#loveBtn {
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+}
+
+#scrobble-length {
+  margin: 3px;
+}
+
+.hidden {
+  display: none;
 }
